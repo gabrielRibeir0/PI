@@ -1,0 +1,3 @@
+void triangulo(int n){
+    
+}
