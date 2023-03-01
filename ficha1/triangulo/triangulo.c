@@ -2,7 +2,7 @@
 
 void triangulo (int n);
 
-main () {
+int main () {
     triangulo (5);
     return 0;
 }
