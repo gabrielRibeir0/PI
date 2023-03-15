@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 //Ex 1
 /* a)
 int main () {
@@ -88,5 +90,69 @@ void inverteArray2 (int v[], int N){        // A usar a função do Ex 2
         swapM(&v[i], &v[j]);
         i++;
         j--;
+    }
+}
+
+//Ex 6
+int maximum (int v[], int N, int *m){
+    if(N <= 0)
+        return 1;
+    else{
+        int max = v[0];
+        for(int i = 1; i < N; i++){
+            if(v[i] > max)
+                max = v[i];
+        }
+        *m = max;
+        return 0;
+    }
+}
+
+//Ex 7
+void quadrados (int q[], int N){
+    int a = 0;
+    for(int i = 0; i < N; i++){
+        // ou apenas q[i] = i*i;
+        int quadrado = a + (2*i) + 1;
+        q[i] = quadrado;
+        a = quadrado;
+    }
+}
+
+//Ex 8
+//a)
+void pascal(int v[], int N) {
+    int i, j;
+    int linha[N];
+    linha[0] = 1;
+    
+    for (i = 0; i < N; i++) {
+        v[i] = linha[i];
+        for (j = i; j > 0; j--)
+            linha[j] += linha[j-1];
+        linha[j+1] = 1;
+    }
+}
+
+//b)
+void desenhar(int N) {
+    int triangulo[N][N];
+    int i, j;
+    
+    triangulo[0][0] = 1;
+    
+    for (i = 1; i < N; i++) {
+        triangulo[i][0] = 1;
+        for (j = 1; j <= i; j++) {
+            triangulo[i][j] = triangulo[i-1][j-1] + triangulo[i-1][j];
+        }
+    }
+    
+    printf("Triangulo de Pascal com as %d primeiras linhas:\n", N);
+    for (i = 0; i < N; i++) {
+        for (j = 0; j <= i; j++) {
+            printf("%d ", triangulo[i][j]);
+        }
+        printf("\n");
     }
 }
