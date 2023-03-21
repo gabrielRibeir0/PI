@@ -14,6 +14,6 @@ int main(){
 
     media = soma / i;
     
-    printf("Maior: %.2f\n", media);
+    printf("Média: %.2f\n", media);
     return 0;
 }

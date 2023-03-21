@@ -6,5 +6,5 @@ int bitsUm (unsigned int n){
         n /= 2;
     }
 
-    return 0;
+    return r;
 }
