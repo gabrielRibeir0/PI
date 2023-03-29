@@ -11,4 +11,6 @@ int comunsOrd (int a[], int na, int b[], int nb){
         else 
             i++;
     }
+
+    return count;
 }
