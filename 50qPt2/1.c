@@ -7,7 +7,7 @@ typedef struct lligada {
 
 int length (LInt l){
     int r = 0;
-    LInt aux = l->prox;
+    LInt aux = l;
 
     while (aux != NULL){
         r++;
