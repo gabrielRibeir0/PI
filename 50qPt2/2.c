@@ -6,12 +6,12 @@ typedef struct lligada {
 } *LInt;
 
 void freeL (LInt l){
-    LInt aux = l->prox;
+    LInt aux = l;
     LInt temp;
-    while (l->prox != NULL){
-        temp = aux->prox;
-        free(aux);
-        aux = temp;
+    
+    while (aux != NULL){
+        temp = aux;
+        aux = aux ->prox;
+        free(temp);
     }
-    free(l); 
 }
