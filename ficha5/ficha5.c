@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 typedef struct aluno {
     int numero;
     char nome[100];
@@ -67,7 +69,15 @@ void criaIndPorNum (Aluno t [], int N, int ind[]){
 
 //5)
 void imprimeTurma (int ind[], Aluno t[], int N){
-
+    int atual = 0;
+    while(atual < N){
+        for(int i = 0; i < N; i++){
+            if(ind[i] == atual)
+                printf("%d %s %d\n", t[i].numero, t[i].nome, nota(t[i]));
+            
+            atual++;
+        }
+    }
 }
 
 //6)
