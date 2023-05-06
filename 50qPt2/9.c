@@ -9,23 +9,25 @@ LInt parteAmeio (LInt *l){
     LInt nova = malloc(sizeof(struct lligada));
     nova = *l;
     LInt atual = *l;
-    LInt ant = NULL;
-    int tamanho;
+
+    int tamanho = 0;
 
     while(atual != NULL) {
         tamanho++;
         atual = atual->prox;
     }
 
+    if(tamanho == 1)
+        return NULL;
+    
     atual = *l;
 
-    while(tamanho/2 > 0){
-        ant = atual;
+    for(int i = 0; i < tamanho/2 - 1; i++){
         atual = atual->prox;
-        tamanho--;
     }
-    ant->prox = NULL;
-    *l = atual;
+
+    *l = atual->prox;
+    atual->prox = NULL;
 
     return nova;
 }
