@@ -6,10 +6,8 @@ typedef struct lligada {
 } *LInt;
 
 void imprimeL (LInt l){
-    LInt aux = l;
-
-    while (aux != NULL){
-        printf("%d\n",aux->valor);
-        aux = aux->prox;
+    while (l != NULL){
+        printf("%d\n", l->valor);
+        l = l->prox;
     }
 }

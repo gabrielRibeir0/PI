@@ -6,12 +6,16 @@ typedef struct lligada {
 } *LInt;
 
 LInt reverseL (LInt l){
-    LInt aux = l;
-    LInt anterior = NULL;
+    LInt atual = l;
+    LInt ant = NULL;
+    LInt prox = NULL;
 
-    while (aux->prox != NULL){
-        LInt new = malloc(sizeof(struct lligada));
-        new->valor = aux->valor;
-        new->prox = NULL;
+    while (atual != NULL){
+        prox = atual->prox;
+        atual->prox = ant;
+        ant = atual;
+        atual = prox;
     }
+
+    return ant;
 }
