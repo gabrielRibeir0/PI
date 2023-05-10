@@ -13,6 +13,10 @@ LInt somasAcL (LInt l){
         soma += l->valor;
         
         LInt novo = malloc(sizeof(struct lligada));
+
+        if(novo == NULL)
+            return NULL;
+        
         novo->valor = soma;
         novo->prox = NULL;
 

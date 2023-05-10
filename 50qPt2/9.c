@@ -7,6 +7,10 @@ typedef struct lligada {
 
 LInt parteAmeio (LInt *l){
     LInt nova = malloc(sizeof(struct lligada));
+    
+    if(nova == NULL)
+        return NULL;
+    
     nova = *l;
     LInt atual = *l;
 

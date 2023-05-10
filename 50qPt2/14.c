@@ -7,6 +7,10 @@ typedef struct lligada {
 
 void appendL (LInt *l, int x){
     LInt novo = malloc(sizeof(struct lligada));
+
+    if(novo == NULL)
+        return;
+    
     novo->prox = NULL;
     novo->valor = x;
 

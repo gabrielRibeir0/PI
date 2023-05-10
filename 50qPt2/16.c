@@ -10,6 +10,10 @@ LInt cloneL (LInt l){
         return NULL;
     
     LInt novo = malloc(sizeof(struct lligada));
+
+    if(novo == NULL)
+        return NULL;
+    
     novo->valor = l->valor;
     novo->prox = clone(l->prox);
 

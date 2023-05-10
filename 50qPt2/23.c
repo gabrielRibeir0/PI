@@ -10,6 +10,10 @@ LInt arrayToList (int v[], int N){
         return NULL;
     
     LInt novo = malloc(sizeof(struct lligada));
+
+    if(novo == NULL)
+        return NULL;
+        
     novo->valor = (*v);
     novo->prox = arrayToList(v + 1, N - 1);
 

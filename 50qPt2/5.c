@@ -7,6 +7,10 @@ typedef struct lligada {
 
 void insertOrd (LInt *l, int x){
     LInt novo = malloc(sizeof(struct lligada));
+
+    if(novo == NULL)
+        return;
+    
     novo->valor = x;
 
     LInt atual = *l;
