@@ -11,7 +11,7 @@ LInt cloneRev (LInt l){
     while(l != NULL){
         LInt novo = malloc(sizeof(struct lligada));
 
-        if(novo = NULL)
+        if(novo == NULL)
             return NULL;
             
         novo->valor = l->valor;

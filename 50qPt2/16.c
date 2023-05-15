@@ -15,7 +15,7 @@ LInt cloneL (LInt l){
         return NULL;
     
     novo->valor = l->valor;
-    novo->prox = clone(l->prox);
+    novo->prox = cloneL(l->prox);
 
     return novo;
 }
