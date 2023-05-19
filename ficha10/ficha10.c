@@ -7,21 +7,31 @@ typedef struct nodo {
 
 //1)
 //a)
-ABin removeMaiorA (ABin *a) {
+ABin removeMenor (ABin *a) {
     if(*a == NULL)
         return NULL;
-    
-    if((*a)->esq == NULL){
-        ABin temp = *a;
-        *a = (*a)->dir;
-        return temp;
-    } 
-    else
-        return removeMenor(&((*a)->esq));
+
+    ABin menor;
+
+    while((*a)->esq != NULL){
+        a = &((*a)->esq);
+    }
+
+    menor = *a;
+    *a = (*a)->dir;
+
+    return menor;
 }
 
 //b)
 void removeRaiz (ABin *a){
+    ABin menor = removeMenor(&((*a)->dir));
+    menor->dir = (*a)->dir;
+    menor->esq = (*a)->esq;
+    free(*a);
+    *a = menor;
+    //ou só trocar os valores
+        //(*a)->valor = menor->valor; free(menor);
 }
 
 //c)
